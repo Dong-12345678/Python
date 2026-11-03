@@ -1,7 +1,7 @@
 import requests
 import pandas as pd
 
-url="https://api.open-meteo.com/v1/forecast?latitude=39.90&longitude=116.40&daily=temperature_2m_max,temperature_2m_min&timezone=Asia/Shanghai"
+url="https://api.open-meteo.com/v1/forecast?latitude=43.88&longitude=125.32&daily=temperature_2m_max,temperature_2m_min&timezone=Asia/Shanghai"
 
 print("正在向服务器请求数据")
 
@@ -28,9 +28,10 @@ if response.status_code == 200:
     print("\n---抓取到的天气数据---")
     print(df)
 
-    df.to_csv('weather_beijing.csv',index=False,encoding='utf-8-sig')
+    df.to_csv('weather_changchun.csv',index=False,encoding='utf-8-sig')
 
-    print("\n数据已经保存为 weather_beijing.csv")
+    print("\n数据已经保存为 weather_changchun.csv")
 
 else:
     print(f"请求失败，状态码：{response.status_code}")
+
