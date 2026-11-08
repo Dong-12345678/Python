@@ -12,4 +12,13 @@ class Solution:
             nums1[k]=nums2[j]
             j -=1
             k -=1
-            
+
+
+class Solution:
+    def removeDuplicates(self, nums: list[int]) -> int:
+        slow = 0
+        for fast in range(1,len(nums)):
+            if nums[fast] != nums[slow]:
+                slow += 1
+                nums[slow]=nums[fast]
+        return slow+1
